@@ -1,0 +1,12 @@
+@import "customers-theme";
+
+@mixin generate-theme-map($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}
+
+:root * {
+  @include generate-theme-map($customers-theme-map);
+  transition: background-color 1s !important;
+}
